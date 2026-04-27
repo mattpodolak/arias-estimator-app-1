@@ -1,14 +1,11 @@
 /* ARIAS Estimator service worker — manual, no build step. */
-const VERSION = "arias-v1";
+const VERSION = "arias-v2";
 const SHELL_CACHE = `${VERSION}-shell`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 
 const SHELL_ASSETS = [
   "/",
   "/manifest.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/apple-touch-icon.png",
 ];
 
 self.addEventListener("install", (event) => {
@@ -41,12 +38,8 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
-  // Never cache API responses — always go to network.
-  if (url.pathname.startsWith("/api/")) {
-    return;
-  }
+  if (url.pathname.startsWith("/api/")) return;
 
-  // Navigation requests: network-first, fall back to cached shell.
   if (req.mode === "navigate") {
     event.respondWith(
       (async () => {
@@ -70,10 +63,8 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Static assets: stale-while-revalidate.
   if (
     url.pathname.startsWith("/_next/") ||
-    url.pathname.startsWith("/icons/") ||
     /\.(?:js|css|png|svg|jpg|jpeg|webp|woff2?|ttf)$/.test(url.pathname)
   ) {
     event.respondWith(
