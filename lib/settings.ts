@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Trade } from "./rates";
+import type { TradeId } from "./rates";
 import type { RateOverrides } from "./types";
 
 export type CompanyInfo = {
@@ -13,14 +13,19 @@ export type CompanyInfo = {
   address: string;
   website: string;
   brand: string;
+  logoDataUrl?: string;
 };
+
+import { DEFAULT_EMAIL_SETTINGS, type EmailSettings } from "./email";
 
 export type AppSettings = {
   company: CompanyInfo;
   /** Trades enabled by default for new estimates. Empty array = all trades. */
-  defaultTrades: Trade[];
+  defaultTrades: TradeId[];
   /** Per-rate-id labor/material overrides applied on top of the base rate book. */
   rateOverrides: RateOverrides;
+  /** Email settings */
+  email: EmailSettings;
 };
 
 export const DEFAULT_COMPANY: CompanyInfo = {
@@ -38,6 +43,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   company: DEFAULT_COMPANY,
   defaultTrades: [],
   rateOverrides: {},
+  email: DEFAULT_EMAIL_SETTINGS,
 };
 
 const STORAGE_KEY = "arias.settings.v1";
@@ -52,12 +58,13 @@ export function loadSettings(): AppSettings {
     return {
       company: { ...DEFAULT_COMPANY, ...(parsed.company ?? {}) },
       defaultTrades: Array.isArray(parsed.defaultTrades)
-        ? (parsed.defaultTrades as Trade[])
+        ? (parsed.defaultTrades as TradeId[])
         : [],
       rateOverrides:
         parsed.rateOverrides && typeof parsed.rateOverrides === "object"
           ? (parsed.rateOverrides as RateOverrides)
           : {},
+      email: { ...DEFAULT_EMAIL_SETTINGS, ...(parsed.email ?? {}) },
     };
   } catch {
     return DEFAULT_SETTINGS;

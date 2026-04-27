@@ -6,6 +6,7 @@ import type {
   ProposalConfig,
   SignatureRequest,
 } from "./types";
+import type { Milestone, PhotoEntry, DailyLog, Rfi, PunchItem, EmailRecord } from "./phase2";
 
 export type ProjectStatus =
   | "draft"
@@ -45,6 +46,13 @@ export type StoredProject = {
   estimate: Estimate;
   visualizationImage?: string | null;
   signature?: SignatureRequest | null;
+  // Phase 2 fields
+  punchItems?: PunchItem[];
+  rfis?: Rfi[];
+  dailyLogs?: DailyLog[];
+  photos?: PhotoEntry[];
+  timeline?: Milestone[];
+  emailHistory?: EmailRecord[];
 };
 
 const PROJECTS_KEY = "arias.projects.v1";

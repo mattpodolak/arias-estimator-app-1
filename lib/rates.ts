@@ -1,4 +1,29 @@
 export type RateUnit = "SF" | "LF" | "EA";
+export const RATE_UNITS: RateUnit[] = ["SF", "LF", "EA"];
+
+// Trade categories for settings
+export type TradeId = "drywall" | "framing" | "taping" | "acoustical" | "insulation";
+
+export type Trade = {
+  id: TradeId;
+  label: string;
+};
+
+export const TRADES: Trade[] = [
+  { id: "drywall", label: "Drywall" },
+  { id: "framing", label: "Metal Framing" },
+  { id: "taping", label: "Taping & Finishing" },
+  { id: "acoustical", label: "Acoustical Ceilings" },
+  { id: "insulation", label: "Insulation" },
+];
+
+export const TRADE_LABEL: Record<TradeId, string> = {
+  drywall: "Drywall",
+  framing: "Metal Framing",
+  taping: "Taping & Finishing",
+  acoustical: "Acoustical Ceilings",
+  insulation: "Insulation",
+};
 
 export type RateCategory = "drywall" | "framing" | "finishing" | "trim" | "openings" | "other";
 
@@ -11,6 +36,8 @@ export type RateConfig = {
   materialRate: number;
   /** Maps an extracted measurement key (from Gemini) to this rate. */
   measurementKey: string;
+  /** Associated trade */
+  trade: Trade;
 };
 
 /**
@@ -30,6 +57,7 @@ export const DEFAULT_RATES: RateConfig[] = [
     laborRate: 2.1,
     materialRate: 1.4,
     measurementKey: "drywall_sf",
+    trade: TRADES[0],
   },
   {
     id: "metal_stud_framing",
@@ -39,6 +67,7 @@ export const DEFAULT_RATES: RateConfig[] = [
     laborRate: 2.7,
     materialRate: 1.8,
     measurementKey: "metal_framing_sf",
+    trade: TRADES[1],
   },
   {
     id: "taping_level_4",
@@ -48,6 +77,7 @@ export const DEFAULT_RATES: RateConfig[] = [
     laborRate: 0.7,
     materialRate: 0.3,
     measurementKey: "taping_sf",
+    trade: TRADES[2],
   },
   {
     id: "corner_bead",
@@ -57,6 +87,7 @@ export const DEFAULT_RATES: RateConfig[] = [
     laborRate: 2.1,
     materialRate: 1.4,
     measurementKey: "corner_bead_lf",
+    trade: TRADES[2],
   },
   {
     id: "door_openings",
@@ -66,6 +97,7 @@ export const DEFAULT_RATES: RateConfig[] = [
     laborRate: 85,
     materialRate: 35,
     measurementKey: "door_count",
+    trade: TRADES[1],
   },
   {
     id: "window_openings",
@@ -75,6 +107,7 @@ export const DEFAULT_RATES: RateConfig[] = [
     laborRate: 65,
     materialRate: 25,
     measurementKey: "window_count",
+    trade: TRADES[1],
   },
 ];
 

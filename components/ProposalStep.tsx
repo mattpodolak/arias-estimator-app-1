@@ -313,7 +313,8 @@ export function ProposalStep({
               fileName={fileBaseName}
               className="btn-primary"
             >
-              {({ loading }) => (loading ? "Preparing…" : "Download PDF")}
+              {/* @ts-expect-error - react-pdf types issue */}
+              {({ loading }: { loading: boolean }) => (loading ? "Preparing…" : "Download PDF")}
             </PDFDownloadLink>
           </div>
         </div>

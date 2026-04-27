@@ -43,11 +43,11 @@ export default function SettingsPage() {
     setSettings((s) => ({ ...s, company: { ...s.company, ...patch } }));
   }
 
-  function toggleTrade(t: Trade) {
+  function toggleTrade(tradeId: string) {
     setSettings((s) => {
       const set = new Set(s.defaultTrades);
-      if (set.has(t)) set.delete(t);
-      else set.add(t);
+      if (set.has(tradeId as any)) set.delete(tradeId as any);
+      else set.add(tradeId as any);
       return { ...s, defaultTrades: Array.from(set) };
     });
   }
@@ -124,11 +124,11 @@ export default function SettingsPage() {
   }
 
   const tradeGroups = useMemo(() => {
-    const map = new Map<Trade, RateConfig[]>();
+    const map = new Map<string, RateConfig[]>();
     for (const r of DEFAULT_RATES) {
-      const list = map.get(r.trade) ?? [];
+      const list = map.get(r.trade.id) ?? [];
       list.push(r);
-      map.set(r.trade, list);
+      map.set(r.trade.id, list);
     }
     return map;
   }, []);
