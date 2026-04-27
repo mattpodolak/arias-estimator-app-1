@@ -11,9 +11,10 @@ function resolveBackend(): ExtractorBackend {
   const raw = (process.env.EXTRACTOR_BACKEND || "").toLowerCase().trim();
   if (raw === "gemini") return "gemini";
   if (raw === "guild") return "guild";
+  // Only use guild if GUILD_API_KEY is actually set
   if (process.env.GUILD_API_KEY) return "guild";
-  if (process.env.GEMINI_API_KEY) return "gemini";
-  return "guild";
+  // Default to gemini (most users have this)
+  return "gemini";
 }
 
 export function getExtractor(): PlanExtractor {
