@@ -1,0 +1,150 @@
+{
+  "region": "Southern California",
+  "year": 2026,
+  "labor_rate_hourly": 75.00,
+  "regional_multiplier": 1.35,
+  "trades": {
+    "drywall_framing": {
+      "label": "Drywall & Metal Framing",
+      "rates": {
+        "drywall_hang_finish": { "description": "Drywall hang & finish (5/8\" GWB)", "unit": "SF", "rate": 3.50, "min": 2.50, "max": 5.00 },
+        "drywall_hang_only":   { "description": "Drywall hang only", "unit": "SF", "rate": 1.75, "min": 1.25, "max": 2.25 },
+        "metal_stud_framing":  { "description": "Metal stud framing (3-5/8\" 25ga @ 16\" O.C.)", "unit": "SF", "rate": 6.50, "min": 5.00, "max": 10.00 },
+        "metal_stud_framing_20ga": { "description": "Metal stud framing (20ga heavier gauge)", "unit": "SF", "rate": 7.50, "min": 6.00, "max": 11.00 },
+        "taping_level4":       { "description": "Taping & finishing Level 4", "unit": "SF", "rate": 1.00, "min": 0.85, "max": 1.25 },
+        "taping_level5":       { "description": "Taping & finishing Level 5", "unit": "SF", "rate": 1.50, "min": 1.25, "max": 1.75 },
+        "furring_hat_channel": { "description": "Hat channel furring (1-1/2\" @ 16\" O.C.)", "unit": "SF", "rate": 2.80, "min": 2.50, "max": 3.50 },
+        "soffit_framing":      { "description": "Soffit framing", "unit": "SF", "rate": 7.80, "min": 6.50, "max": 9.00 },
+        "corner_bead":         { "description": "Corner bead", "unit": "LF", "rate": 3.90, "min": 3.00, "max": 4.50 },
+        "door_header":         { "description": "Door header framing", "unit": "EA", "rate": 66.00, "min": 50.00, "max": 85.00 },
+        "ceiling_framing":     { "description": "Suspended ceiling framing (GWB)", "unit": "SF", "rate": 6.60, "min": 5.50, "max": 8.00 },
+        "track_floor_ceiling": { "description": "Floor/ceiling track", "unit": "LF", "rate": 1.98, "min": 1.50, "max": 2.50 }
+      }
+    },
+    "electrical": {
+      "label": "Electrical",
+      "rates": {
+        "electrical_outlet":   { "description": "Receptacle outlet (15A/20A)", "unit": "EA", "rate": 120.00, "min": 95.00, "max": 165.00 },
+        "electrical_switch":   { "description": "Light switch (single-pole)", "unit": "EA", "rate": 95.00, "min": 75.00, "max": 130.00 },
+        "light_fixture":       { "description": "Light fixture install (recessed/standard)", "unit": "EA", "rate": 205.00, "min": 145.00, "max": 295.00 },
+        "electrical_panel":    { "description": "Sub-panel install", "unit": "EA", "rate": 1600.00, "min": 1100.00, "max": 2400.00 },
+        "electrical_circuit":  { "description": "Branch circuit run (avg)", "unit": "EA", "rate": 330.00, "min": 220.00, "max": 480.00 },
+        "data_jack":           { "description": "Data / low-voltage jack", "unit": "EA", "rate": 87.00, "min": 65.00, "max": 130.00 },
+        "smoke_detector":      { "description": "Smoke / CO detector", "unit": "EA", "rate": 145.00, "min": 110.00, "max": 195.00 }
+      }
+    },
+    "plumbing": {
+      "label": "Plumbing",
+      "rates": {
+        "plumbing_fixture":  { "description": "Plumbing fixture (sink/toilet/tub)", "unit": "EA", "rate": 505.00, "min": 350.00, "max": 800.00 },
+        "water_heater":      { "description": "Water heater (replace/install)", "unit": "EA", "rate": 1650.00, "min": 1200.00, "max": 2800.00 },
+        "drain_line":        { "description": "Drain line rough-in (avg)", "unit": "LF", "rate": 30.00, "min": 22.00, "max": 48.00 },
+        "supply_line":       { "description": "Hot/cold supply line", "unit": "LF", "rate": 22.00, "min": 14.00, "max": 32.00 },
+        "gas_line":          { "description": "Gas line", "unit": "LF", "rate": 33.00, "min": 24.00, "max": 48.00 },
+        "shower_valve":      { "description": "Shower / tub valve & trim", "unit": "EA", "rate": 480.00, "min": 350.00, "max": 750.00 }
+      }
+    },
+    "hvac": {
+      "label": "HVAC",
+      "rates": {
+        "hvac_unit":          { "description": "HVAC unit (FAU/condenser)", "unit": "EA", "rate": 3350.00, "min": 2400.00, "max": 6500.00 },
+        "supply_register":    { "description": "Supply register / diffuser", "unit": "EA", "rate": 140.00, "min": 95.00, "max": 220.00 },
+        "return_grille":      { "description": "Return grille", "unit": "EA", "rate": 150.00, "min": 95.00, "max": 240.00 },
+        "duct_run":           { "description": "Ductwork (flex/rigid avg)", "unit": "LF", "rate": 30.00, "min": 22.00, "max": 48.00 },
+        "thermostat":         { "description": "Thermostat", "unit": "EA", "rate": 215.00, "min": 145.00, "max": 350.00 },
+        "mini_split_head":    { "description": "Mini-split indoor head", "unit": "EA", "rate": 1850.00, "min": 1300.00, "max": 2600.00 }
+      }
+    },
+    "painting": {
+      "label": "Painting",
+      "rates": {
+        "paint_walls":   { "description": "Paint walls (2 coats)", "unit": "SF", "rate": 1.40, "min": 1.05, "max": 2.10 },
+        "paint_ceiling": { "description": "Paint ceiling", "unit": "SF", "rate": 1.50, "min": 1.10, "max": 2.20 },
+        "paint_trim":    { "description": "Paint trim/baseboard", "unit": "LF", "rate": 2.50, "min": 1.85, "max": 3.50 },
+        "paint_door":    { "description": "Paint door (both sides)", "unit": "EA", "rate": 95.00, "min": 65.00, "max": 145.00 },
+        "primer_coat":   { "description": "Prime / seal", "unit": "SF", "rate": 0.85, "min": 0.60, "max": 1.20 }
+      }
+    },
+    "flooring": {
+      "label": "Flooring",
+      "rates": {
+        "lvp_flooring":      { "description": "Luxury vinyl plank", "unit": "SF", "rate": 6.00, "min": 4.50, "max": 9.00 },
+        "hardwood_flooring": { "description": "Hardwood flooring (engineered/solid)", "unit": "SF", "rate": 11.00, "min": 8.50, "max": 16.00 },
+        "carpet_flooring":   { "description": "Carpet (incl. pad)", "unit": "SF", "rate": 4.00, "min": 3.00, "max": 6.50 },
+        "baseboard":         { "description": "Baseboard install", "unit": "LF", "rate": 4.10, "min": 2.80, "max": 5.50 },
+        "tile_flooring":     { "description": "Floor tile (porcelain/ceramic)", "unit": "SF", "rate": 11.00, "min": 8.50, "max": 16.00 }
+      }
+    },
+    "roofing": {
+      "label": "Roofing",
+      "rates": {
+        "asphalt_shingles":  { "description": "Asphalt shingle roofing", "unit": "SF", "rate": 4.60, "min": 3.50, "max": 6.50 },
+        "underlayment":      { "description": "Roof underlayment", "unit": "SF", "rate": 1.00, "min": 0.75, "max": 1.50 },
+        "flashing":          { "description": "Roof flashing", "unit": "LF", "rate": 10.75, "min": 7.50, "max": 16.00 },
+        "gutter":            { "description": "Gutter (5\" K-style)", "unit": "LF", "rate": 10.00, "min": 7.50, "max": 14.50 },
+        "metal_roofing":     { "description": "Standing-seam metal roofing", "unit": "SF", "rate": 12.00, "min": 9.00, "max": 18.00 },
+        "tear_off":          { "description": "Tear-off / dispose existing roofing", "unit": "SF", "rate": 1.50, "min": 1.10, "max": 2.50 }
+      }
+    },
+    "concrete_masonry": {
+      "label": "Concrete & Masonry",
+      "rates": {
+        "concrete_slab":   { "description": "Concrete slab on grade (4\")", "unit": "SF", "rate": 9.00, "min": 6.50, "max": 13.50 },
+        "footing":         { "description": "Concrete footing", "unit": "CY", "rate": 400.00, "min": 280.00, "max": 600.00 },
+        "cmu_wall":        { "description": "CMU wall (8\")", "unit": "SF", "rate": 17.00, "min": 13.50, "max": 24.00 },
+        "stem_wall":       { "description": "Concrete stem wall", "unit": "LF", "rate": 95.00, "min": 65.00, "max": 145.00 },
+        "decorative_concrete": { "description": "Decorative / stamped concrete", "unit": "SF", "rate": 16.00, "min": 12.00, "max": 24.00 }
+      }
+    },
+    "carpentry": {
+      "label": "Carpentry & Rough Framing",
+      "rates": {
+        "wood_stud_framing": { "description": "Wood stud framing (2x4/2x6)", "unit": "SF", "rate": 6.00, "min": 4.50, "max": 9.00 },
+        "wood_blocking":     { "description": "Wood blocking", "unit": "LF", "rate": 6.35, "min": 4.50, "max": 9.50 },
+        "sheathing":         { "description": "Roof / wall sheathing", "unit": "SF", "rate": 3.10, "min": 2.25, "max": 4.50 },
+        "joist_framing":     { "description": "Floor / ceiling joists", "unit": "SF", "rate": 5.50, "min": 4.00, "max": 8.50 },
+        "rafter_framing":    { "description": "Roof rafters", "unit": "SF", "rate": 6.50, "min": 4.75, "max": 9.50 }
+      }
+    },
+    "insulation": {
+      "label": "Insulation",
+      "rates": {
+        "batt_insulation":   { "description": "Batt insulation R-13/R-19", "unit": "SF", "rate": 1.40, "min": 1.05, "max": 2.10 },
+        "spray_foam":        { "description": "Spray foam insulation (open-cell)", "unit": "SF", "rate": 3.45, "min": 2.50, "max": 5.50 },
+        "blown_insulation":  { "description": "Blown-in attic insulation", "unit": "SF", "rate": 1.30, "min": 0.95, "max": 2.10 },
+        "rigid_insulation":  { "description": "Rigid foam board", "unit": "SF", "rate": 2.40, "min": 1.75, "max": 3.50 }
+      }
+    },
+    "windows_doors": {
+      "label": "Windows & Doors",
+      "rates": {
+        "interior_door":  { "description": "Interior door (slab + frame + hardware)", "unit": "EA", "rate": 365.00, "min": 250.00, "max": 550.00 },
+        "exterior_door":  { "description": "Exterior door (incl. weatherstrip)", "unit": "EA", "rate": 935.00, "min": 650.00, "max": 1500.00 },
+        "window_install": { "description": "Window install (avg single-hung)", "unit": "EA", "rate": 610.00, "min": 425.00, "max": 950.00 },
+        "patio_door":     { "description": "Patio / sliding glass door", "unit": "EA", "rate": 1450.00, "min": 1100.00, "max": 2400.00 },
+        "garage_door":    { "description": "Garage door (single bay)", "unit": "EA", "rate": 1850.00, "min": 1200.00, "max": 3500.00 }
+      }
+    },
+    "tile": {
+      "label": "Tile",
+      "rates": {
+        "floor_tile":      { "description": "Floor tile (porcelain/ceramic)", "unit": "SF", "rate": 11.00, "min": 8.50, "max": 16.00 },
+        "wall_tile":       { "description": "Wall tile", "unit": "SF", "rate": 14.00, "min": 10.50, "max": 21.00 },
+        "tile_grout_seal": { "description": "Grout & seal", "unit": "SF", "rate": 1.90, "min": 1.40, "max": 2.75 },
+        "shower_pan":      { "description": "Shower pan / waterproofing", "unit": "EA", "rate": 950.00, "min": 700.00, "max": 1500.00 },
+        "stone_tile":      { "description": "Natural stone tile", "unit": "SF", "rate": 22.00, "min": 16.00, "max": 32.00 }
+      }
+    },
+    "cabinetry": {
+      "label": "Cabinetry & Millwork",
+      "rates": {
+        "base_cabinet":    { "description": "Base cabinet (per LF)", "unit": "LF", "rate": 380.00, "min": 250.00, "max": 600.00 },
+        "upper_cabinet":   { "description": "Upper / wall cabinet (per LF)", "unit": "LF", "rate": 330.00, "min": 220.00, "max": 525.00 },
+        "tall_cabinet":    { "description": "Tall pantry / utility cabinet (per LF)", "unit": "LF", "rate": 600.00, "min": 425.00, "max": 950.00 },
+        "countertop":      { "description": "Countertop install", "unit": "SF", "rate": 87.00, "min": 55.00, "max": 145.00 },
+        "millwork_trim":   { "description": "Millwork / trim install", "unit": "LF", "rate": 14.00, "min": 9.50, "max": 22.00 },
+        "closet_system":   { "description": "Closet system (per LF)", "unit": "LF", "rate": 165.00, "min": 110.00, "max": 280.00 }
+      }
+    }
+  }
+}
