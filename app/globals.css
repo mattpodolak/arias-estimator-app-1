@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --arias-blue: #0052cc;
+}
+
+html,
+body {
+  background: #f6f8fb;
+  color: #0f172a;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-arias text-white shadow-sm hover:bg-arias-600 focus:ring-arias;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-arias border border-arias-100 hover:bg-arias-50 focus:ring-arias-200;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-slate-600 hover:bg-slate-100 focus:ring-slate-300;
+  }
+  .card {
+    @apply rounded-xl bg-white shadow-card border border-slate-100;
+  }
+  .input {
+    @apply block w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-slate-400 focus:border-arias focus:outline-none focus:ring-1 focus:ring-arias;
+  }
+  .label {
+    @apply block text-xs font-medium uppercase tracking-wide text-slate-500;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}
